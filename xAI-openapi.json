@@ -6,7 +6,7 @@
     "license": { "name": "" },
     "version": "1.0.0"
   },
-  "servers": [{ "url": "https://api.x.ai/v1" }],
+  "servers": [{ "url": "https://api.x.ai" }],
   "paths": {
     "/v1/api-key": {
       "get": {
