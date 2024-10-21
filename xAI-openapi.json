@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "xAI's REST API",
-    "description": "The xAI Enterprise API is a robust, high-performance RESTful interface designed for seamless integration into existing systems. It offers advanced AI capabilities with full compatibility with the OpenAI REST API.",
+    "title": "(Modified) xAI REST API",
+    "description": "This is a modified version of the xAI API - changed to conform to OpenAPI standards and improve integration with OpenAPI-based tooling. You can find the repository link [here](https://github.com/zuplo-samples/xAI-OpenAPI/tree/main). \n The xAI Enterprise API is a robust, high-performance RESTful interface designed for seamless integration into existing systems. It offers advanced AI capabilities with full compatibility with the OpenAI REST API.",
     "license": { "name": "" },
     "version": "1.0.0"
   },
