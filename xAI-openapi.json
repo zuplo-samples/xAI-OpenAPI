@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "xAI's REST API",
-    "description": "The xAI Enterprise API is a robust, high-performance RESTful interface designed for seamless integration into existing systems. It offers advanced AI capabilities with full compatibility with the OpenAI REST API.",
+    "title": "(Modified) xAI REST API",
+    "description": "The xAI Enterprise API is a robust, high-performance RESTful interface designed for seamless integration into existing systems. It offers advanced AI capabilities with full compatibility with the OpenAI REST API. This API was modified for better viewing in API documentation tools. [Repo link](https://github.com/zuplo-samples/xAI-OpenAPI).",
     "license": { "name": "" },
     "version": "1.0.0"
   },
@@ -13,6 +13,7 @@
         "summary": "API Keys",
         "description": "Get information about an API key, including name, status, permissions and users who created or modified this key.",
         "operationId": "handle_get_api_key_info_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "responses": {
           "200": {
             "description": "Success",
@@ -47,6 +48,7 @@
         "tags": ["crate::v1"],
         "description": "Create a language model response for a given chat conversation. This endpoint is compatible with the OpenAI API.",
         "operationId": "handle_generic_completion_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "requestBody": {
           "content": {
             "application/json": {
@@ -95,6 +97,7 @@
         "tags": ["crate::v1"],
         "description": "Complete endpoint. This endpoint is compatible with the Anthropic API.",
         "operationId": "handle_generic_complete_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "requestBody": {
           "content": {
             "application/json": {
@@ -131,6 +134,7 @@
         "tags": ["crate::v1"],
         "description": "Create a language model response for a given prompt. This endpoint is compatible with the OpenAI API.",
         "operationId": "handle_sample_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "requestBody": {
           "content": {
             "application/json": {
@@ -175,6 +179,7 @@
         "tags": ["crate::v1"],
         "description": "List all embedding models available for an API key.",
         "operationId": "handle_embedding_models_list_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "responses": {
           "200": {
             "description": "Success",
@@ -218,7 +223,8 @@
             "description": "ID of the model to get.",
             "required": true,
             "schema": { "type": "string" }
-          }
+          },
+          { "$ref": "#/components/parameters/Authorization" }
         ],
         "responses": {
           "200": {
@@ -251,6 +257,7 @@
         "tags": ["crate::v1"],
         "description": "Create an embedding vector representation corresponding to the input text. This endpoint is compatible with the OpenAI API.",
         "operationId": "handle_embedding_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "requestBody": {
           "content": {
             "application/json": {
@@ -293,6 +300,7 @@
         "tags": ["crate::v1"],
         "description": "List all language models available.",
         "operationId": "handle_language_models_list_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "responses": {
           "200": {
             "description": "Success",
@@ -337,7 +345,8 @@
             "description": "ID of the model to get.",
             "required": true,
             "schema": { "type": "string" }
-          }
+          },
+          { "$ref": "#/components/parameters/Authorization" }
         ],
         "responses": {
           "200": {
@@ -372,6 +381,7 @@
         "summary": "Create messages",
         "description": "Messages endpoint. This endpoint is compatible with the Anthropic API.",
         "operationId": "handle_generic_messages_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "requestBody": {
           "content": {
             "application/json": {
@@ -421,6 +431,7 @@
         "summary": "List models",
         "description": "OpenAI compatible version of model listing with reduced information. This endpoint is compatible with the OpenAI API.",
         "operationId": "handle_models_list_request",
+        "parameters": [{ "$ref": "#/components/parameters/Authorization" }],
         "responses": {
           "200": {
             "description": "Success",
@@ -458,7 +469,8 @@
             "description": "ID of the model to get.",
             "required": true,
             "schema": { "type": "string" }
-          }
+          },
+          { "$ref": "#/components/parameters/Authorization" }
         ],
         "responses": {
           "200": {
@@ -483,6 +495,15 @@
     }
   },
   "components": {
+    "parameters": {
+      "Authorization": {
+        "name": "Authorization",
+        "in": "header",
+        "description": "API Key, obtained from xAI console.",
+        "required": true,
+        "schema": { "type": "string" }
+      }
+    },
     "schemas": {
       "ApiKey": {
         "type": "object",
