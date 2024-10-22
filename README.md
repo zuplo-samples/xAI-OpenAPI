@@ -7,6 +7,9 @@ Their latest OpenAPI can be found at: [https://docs.x.ai/openapi.json](https://d
 
 You can get live code samples and a full test console using this [Zudoku Sample](https://zudoku.dev/demo?api-url=https://raw.githubusercontent.com/zuplo-samples/xAI-OpenAPI/refs/heads/main/xAI-openapi.json).
 
+[![Zudoku](https://zudoku.dev/zudoku.svg)](https://zudoku.dev/demo?api-url=https://raw.githubusercontent.com/zuplo-samples/xAI-OpenAPI/refs/heads/main/xAI-openapi.json)
+
+
 ## Quickstart
 This page is designed to help you get up and running with our API, including setting up your account and documenting the API and its available functionality.
 
